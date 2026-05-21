@@ -1,8 +1,6 @@
 # Hi, I'm Sayandip 👋
 
-Product-minded engineer building production AI tooling end-to-end — from content extraction and ingestion pipelines, through RAG and intent-routed retrieval, into deployed Next.js apps and browser-automation workflows that real teams use day-to-day.
-
-I work most often at the seam between **AI systems and ops/compliance/contact-centre workflows in financial services** — places where retrieval quality and audit trails matter more than novelty.
+Associate Director of Product @ Zeta | 13+ yrs in product | Building credit card products (UK/US) by day, exploring cross-border payments and reg-tech by night
 
 ## What I build
 
