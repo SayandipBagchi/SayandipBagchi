@@ -19,7 +19,7 @@ Associate Director of Product @ Zeta | 13+ yrs in product | Building credit card
 | [spa-automation-toolkit](https://github.com/sayandip1987/spa-automation-toolkit) | Browser-side patterns for automating React SPAs when the UI gets in the way — fetch interception, Fiber traversal, coordinate clicks | Vanilla JS (ES2017+) · React Fiber |
 | [uat-jira-automation](https://github.com/sayandip1987/uat-jira-automation) | Agent-driven UAT bug triage + deduplication + batch Jira filing · 29 raw findings → 18 dedup-matched + 12 net-new tickets in 3 sessions | AI browser-automation agent · Atlassian Jira |
 
-## How I think about engineering
+## How I think about AI first product development
 
 A few opinions that show up in everything above:
 
