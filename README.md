@@ -11,7 +11,7 @@ The tooling is mostly retrieval systems, agents and operator tooling, so the tea
 - lets a PM ship copy and config changes to a programme's web app without an engineering ticket, and escalates what genuinely needs one
 - answers questions over product documentation
 
-All four derive the contract from the data, hold a strict output schema, and put a human gate in front of anything that writes. The first two are public; the other two are not.
+All four derive the contract from the data, hold a strict output schema, and put a human gate in front of anything that writes. 
 
 ## Worth opening
 
