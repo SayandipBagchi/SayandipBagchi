@@ -1,6 +1,6 @@
 # Sayandip Bagchi
 
-**Associate Director of Product @ Zeta.** Thirteen years in product across fintech,
+**Product Leader @ Zeta.** Fourteen years in product across fintech,
 edtech and decision sciences. I run two consumer credit card programmes — a UK
 sub-prime card, live and in operations, and a US semi-prime card in build — and a
 team of six.
