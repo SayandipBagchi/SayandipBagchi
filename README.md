@@ -36,7 +36,7 @@ A few opinions that show up in everything above:
 
 ## Get in touch
 
-- LinkedIn: *(add your handle)*
-- Email: *(add your address)*
+- LinkedIn: *linkedin.com/in/sayandip-bagchi-3a04aa83*
+- Email: *sayandip.bagchi@gmail.com*
 
 If something in any of the repos above is useful, missing, or wrong — issues and PRs welcome.
