@@ -1,8 +1,8 @@
 # Sayandip Bagchi
 
-I write the specs, and I build the tooling that makes the specs cheaper to get right.
+I write the specs — and I build the tooling that makes those specs cheaper to get right. Right now that means a hybrid team of people and agents, and I spend a lot of time on the agent lifecycle so the humans on the team actually get faster.
 
-At Zeta, in Bangalore, I run four consumer programmes as chapter head, with a team of twelve: a sub-prime credit card live in operations in the UK, two credit cards in the US, one of them semi-prime and in build, and a US checking account. Two regulated markets, one team. Before Zeta: Mu Sigma, a founder stint at Parentof, Director of Product at Niyo. IIM Indore. Fourteen years: decision sciences, then edtech, then fintech.
+At Zeta, I run four consumer programmes as product leader, with a team of twelve: a sub-prime credit card live in operations in the UK, two credit cards in the US, one of them semi-prime and in build, and a US checking account. Two regulated markets, one team. Before Zeta: Mu Sigma, a founder stint at Parentof, Director of Product at Niyo. IIM Indore. Fourteen years: decision sciences, then edtech, then fintech.
 
 The tooling is mostly retrieval systems, agents and operator tooling, so the team ships work that would normally need a bigger one. The agents I have built that run inside my own team:
 
