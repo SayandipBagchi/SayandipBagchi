@@ -4,15 +4,37 @@ I write the specs — and I build the tooling that makes those specs cheaper to 
 
 At Zeta, I run four consumer programmes as product leader, with a team of twelve: a sub-prime credit card live in operations in the UK, two credit cards in the US, one of them semi-prime and in build, and a US checking account. Two regulated markets, one team. Before Zeta: Mu Sigma, a founder stint at Parentof, Director of Product at Niyo. IIM Indore. Fourteen years: decision sciences, then edtech, then fintech.
 
-The tooling is mostly retrieval systems, agents and operator tooling, so the team ships work that would normally need a bigger one. The agents I have built that run inside my own team:
+## AI stack
 
-- [superset-bi-agent](https://github.com/SayandipBagchi/superset-bi-agent) derives a card programme's real stage ladder from live data, then builds the dashboard suite on top
-- [cx-running-sheet](https://github.com/SayandipBagchi/cx-running-sheet) codes voice-of-customer themes from contact-centre transcripts
-- [connect-identifier](https://github.com/SayandipBagchi/connect-identifier) resolves which customer every contact-centre chat and call was, daily, using the credentials a programme actually has rather than AWS IAM
-- [enterprise-rag-knowledge-base](https://github.com/SayandipBagchi/enterprise-rag-knowledge-base) answers questions over product documentation
-- an internal change agent lets a PM ship copy and config changes to a programme's web app without an engineering ticket, and escalates what genuinely needs one. Not public: it is bound to our repo layout.
+![Claude](https://img.shields.io/badge/Claude-D97757?style=for-the-badge&logo=claude&logoColor=white) ![Claude Code](https://img.shields.io/badge/Claude%20Code-D97757?style=for-the-badge&logo=claudecode&logoColor=white) ![Claude Cowork](https://img.shields.io/badge/Claude%20Cowork-D97757?style=for-the-badge&logo=claude&logoColor=white) ![Codex](https://img.shields.io/badge/Codex-000000?style=for-the-badge) ![GPT-4o](https://img.shields.io/badge/GPT--4o-412991?style=for-the-badge) ![OpenAI Embeddings](https://img.shields.io/badge/OpenAI%20Embeddings-412991?style=for-the-badge) ![RAG](https://img.shields.io/badge/RAG-6E40C9?style=for-the-badge) ![Vector DB](https://img.shields.io/badge/Vector%20DB-5A4FCF?style=for-the-badge) ![Qdrant](https://img.shields.io/badge/Qdrant-DC244C?style=for-the-badge&logo=qdrant&logoColor=white) ![LLM Reranking](https://img.shields.io/badge/LLM%20Reranking-4B5563?style=for-the-badge) ![LLM as Judge](https://img.shields.io/badge/LLM%20as%20Judge-4B5563?style=for-the-badge) ![MCP](https://img.shields.io/badge/MCP-000000?style=for-the-badge&logo=modelcontextprotocol&logoColor=white) ![Lovable](https://img.shields.io/badge/Lovable-E8456B?style=for-the-badge) ![Supabase](https://img.shields.io/badge/Supabase-3FCF8E?style=for-the-badge&logo=supabase&logoColor=white) ![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white) ![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white) ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white) ![Amazon Connect](https://img.shields.io/badge/Amazon%20Connect-FF9900?style=for-the-badge) ![Apache Superset](https://img.shields.io/badge/Apache%20Superset-20A6C9?style=for-the-badge&logo=apachesuperset&logoColor=white) ![MoEngage](https://img.shields.io/badge/MoEngage-0B5FFF?style=for-the-badge) ![Power Automate](https://img.shields.io/badge/Power%20Automate-0066FF?style=for-the-badge)
 
-Every one of them derives the contract from the data, holds a strict output schema, and puts a human gate in front of anything that writes.
+## Building with AI
+
+How an agent or retrieval system goes from idea to something my team trusts. Each step is a lesson from [building-with-ai](https://github.com/SayandipBagchi/building-with-ai), in the order it bites.
+
+```mermaid
+flowchart LR
+  subgraph D["Define"]
+    direction TB
+    A["Write the evals<br/>with the spec"] --> B["Derive the contract<br/>from the data<br/>strict output schema"]
+  end
+  subgraph R["Build"]
+    direction TB
+    C["Boring baseline,<br/>instrumented"] --> E["Observe retrieval<br/>top-K, rerank scores"]
+    E --> F["Context: decide<br/>what to leave out"]
+    F --> G["Cite or decline"]
+  end
+  subgraph S["Ship"]
+    direction TB
+    H["Judge one dimension<br/>at a time"] --> I["Human gate before<br/>anything that writes"]
+    I --> J["Reversible: dry run,<br/>read-back, rollback"]
+  end
+  B --> C
+  G --> H
+  J -.-> A
+```
+
+The agents running inside my own team follow this, including one that stays private: an internal change agent that lets a PM ship copy and config changes to a programme's web app without an engineering ticket, and escalates what genuinely needs one. It is bound to our repo layout, so it is not public.
 
 ## Worth opening
 
@@ -23,6 +45,7 @@ Roughly in the order I would want them read.
 - [superset-bi-agent](https://github.com/SayandipBagchi/superset-bi-agent) · **Code.** Builds and QCs Superset dashboard suites for card programmes, deriving each engagement's stage ladder from a transition matrix on live data. It exists because the stage names in the PRD, the event names in the warehouse and the states the data actually moves through are three different things, and a dashboard built on the first two reconciles perfectly against the wrong definition.
 - [cx-running-sheet](https://github.com/SayandipBagchi/cx-running-sheet) · **Code.** Weekly contact-centre insights from Amazon Connect: segments separated from conversations, themes coded from transcripts only, and unique-user figures withheld when identity coverage cannot support them. Written after a single-call pull returned the first 300 rows of a much larger window and nothing looked wrong.
 - [connect-identifier](https://github.com/SayandipBagchi/connect-identifier) · **Code.** Writes a row a day saying which customer every Amazon Connect chat and call was. It exists because the programme had a Connect console login and a Superset login and no AWS IAM, and because the identifier sits on the contact record where the search API will not return it. Read-back equality is the definition of success, not the absence of an exception.
+- [observability](https://github.com/SayandipBagchi/observability) · **Code.** Real-time business alerting built inside MoEngage. It turns an observability sheet into approved alerts, builds them in the browser, proves delivery, and audits for alerts that silently stopped. Ten skills, eight agents, 23 eval cases, one fictional demo tenant. It exists because alerting goes quietly wrong: an `is not empty` filter fires on successes, and a row in a log is not an email in someone's inbox.
 - [geoask-prototype](https://github.com/SayandipBagchi/geoask-prototype) · **Product definition.** A consumer product defined end to end before a line of production code: strategy memo, competitive triangulation, unit economics with the method shown for every figure, UX spec, brand book and a clickable prototype.
 - [uk-compliance-knowledge-base](https://github.com/SayandipBagchi/uk-compliance-knowledge-base) · **Write-up.** Retrieval over the UK retail financial-services rulebook, with page-precise PDF citations and a rule that makes the system decline rather than paraphrase. A confident paraphrase of a rule that does not exist is worse than no answer.
 - [enterprise-rag-knowledge-base](https://github.com/SayandipBagchi/enterprise-rag-knowledge-base) · **Write-up.** Retrieval question-answering over a company's internal product documentation, built end to end. The lesson I keep: write the eval set before the pipeline, not at phase four.
