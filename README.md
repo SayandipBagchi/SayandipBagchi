@@ -34,7 +34,6 @@ flowchart LR
   J -.-> A
 ```
 
-The agents running inside my own team follow this, including one that stays private: an internal change agent that lets a PM ship copy and config changes to a programme's web app without an engineering ticket, and escalates what genuinely needs one. It is bound to our repo layout, so it is not public.
 
 ## Worth opening
 
