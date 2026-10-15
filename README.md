@@ -10,7 +10,7 @@ At Zeta, I run four consumer programmes as product leader, with a team of twelve
 
 ## Building with AI
 
-How an agent or retrieval system goes from idea to something my team trusts. Each step is a lesson from [building-with-ai](https://github.com/SayandipBagchi/building-with-ai), in the order it bites.
+How an agent or retrieval system goes from idea to something my team trusts.
 
 ```mermaid
 flowchart LR
